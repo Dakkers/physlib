@@ -1,0 +1,12 @@
+node_modules
+dist
+.tmp
+.sass-cache
+public/bower_components
+.jshintrc
+
+# remove these later
+Gruntfile.js
+.travis.yml
+test
+public/.buildignore
