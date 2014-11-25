@@ -5,28 +5,30 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href="//fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" type="text/css" href="/css/jumbotron-narrow.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-awesome-checkbox.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body ng-app="physlibApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
     <div class="container" ng-controller="NavCtrl">
-      <div class="header">
-        <ul ng-if="isAuthenticated()" class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/login">Login</a></li>
-          <li><a ng-href="#/signup">Signup</a></li>
+      <div id="nav" class="header">
+        <ul ng-if="!isAuthenticated()" class="nav nav-pills pull-right">
+          <li ng-class="{active: $route.current.activeTab == 'home'}"><a ng-href="#/">Home</a></li>
+          <li ng-class="{active: $route.current.activeTab == 'books'}"><a ng-href="#/books">Books</a></li>
+          <li ng-class="{active: $route.current.activeTab == 'login'}"><a ng-href="#/login">Login</a></li>
+          <li ng-class="{active: $route.current.activeTab == 'signup'}"><a ng-href="#/signup">Signup</a></li>
         </ul>
         <h3 class="text-muted">physlib</h3>
       </div>
@@ -61,9 +63,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="/js/app.js"></script>
-    <script src="/js/controllers/main.js"></script>
-    <script src="/js/controllers/about.js"></script>
-    <script type="text/javascript" src="/js/controllers/controllers.js"></script>
+    <script type="text/javascript" src="/js/controllers.js"></script>
     <!-- endbuild -->
 </body>
 </html>

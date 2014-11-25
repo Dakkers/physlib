@@ -9,19 +9,23 @@ angular.module('physlibApp', [
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-        })
-        .when('/about', {
-            templateUrl: 'views/about.html',
-            controller: 'AboutCtrl'
+            controller: 'MainCtrl',
+            activeTab: 'home'
         })
         .when('/login', {
             templateUrl: 'views/login.html',
-            controller: 'LoginCtrl'
+            controller: 'LoginCtrl',
+            activeTab: 'login'
         })
         .when('/signup', {
             templateUrl: 'views/signup.html',
-            controller: 'SignupCtrl'
+            controller: 'SignupCtrl',
+            activeTab: 'signup'
+        })
+        .when('/books', {
+            templateUrl: 'views/books.html',
+            controller: 'BooksCtrl',
+            activeTab: 'books'
         })
         .otherwise({
             redirectTo: '/'

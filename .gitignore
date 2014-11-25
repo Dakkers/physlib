@@ -4,6 +4,7 @@ dist
 .sass-cache
 public/bower_components
 .jshintrc
+physlib.sublime-*
 
 # remove these later
 Gruntfile.js
