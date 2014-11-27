@@ -1,11 +1,14 @@
+"use strict";
+
 angular.module('physlibApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'satellizer'
-  ]).config(function ($routeProvider) {
+    'satellizer',
+    'physlibServices'
+]).config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',

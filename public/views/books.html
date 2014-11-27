@@ -11,6 +11,24 @@
   </form>
 </div>
 
+ <div ng-repeat="(cat, books) in allBooks">
+    <h2>{{cat}}</h2>
+    <div ng-repeat="(ISBN, info) in books">
+      
+      <div class="row marketing">
+        <div class="col-md-10">
+          <h3>{{info.name}}</h2>
+          <p>Status: {{info.signedOut}}</p>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary">Sign out</button>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+ </div>
+
 <div class="row marketing">
-  
+   <button class="btn btn-primary" ng-click="CHANGEPLACES()">update shit</button>
 </div>
