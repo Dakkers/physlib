@@ -7,6 +7,9 @@ public/bower_components
 .jshintrc
 physlib.sublime-*
 
+# passwords and junk
+app/config.js
+
 # remove these later
 Gruntfile.js
 .travis.yml

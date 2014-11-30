@@ -1,6 +1,8 @@
+"use strict";
+
 var physlibServices = angular.module('physlibServices', ['ngResource']);
 
- physlibServices.factory('socket', function($rootScope) {
+physlibServices.factory('socket', function($rootScope) {
     var socket = io.connect();
     
     return {

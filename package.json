@@ -2,8 +2,11 @@
   "name": "physlib",
   "version": "0.0.0",
   "dependencies": {
+    "bcrypt": "^0.8.0",
     "body-parser": "^1.9.3",
     "express": "^4.10.2",
+    "jwt-simple": "^0.2.0",
+    "moment": "^2.8.4",
     "socket.io": "^1.2.1"
   },
   "devDependencies": {

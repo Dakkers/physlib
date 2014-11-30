@@ -7,12 +7,12 @@ angular.module('physlibApp', [
     'ngRoute',
     'ngSanitize',
     'satellizer',
-    'physlibServices'
-]).config(function ($routeProvider) {
+    'physlibServices',
+    'physlibDirectives'
+]).config(function ($routeProvider, $authProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
-            controller: 'MainCtrl',
             activeTab: 'home'
         })
         .when('/login', {
@@ -20,10 +20,18 @@ angular.module('physlibApp', [
             controller: 'LoginCtrl',
             activeTab: 'login'
         })
+        .when('/logout', {
+            templateUrl: null,
+            controller: 'LogoutCtrl'
+        })
         .when('/signup', {
             templateUrl: 'views/signup.html',
             controller: 'SignupCtrl',
             activeTab: 'signup'
+        })
+        .when('/me', {
+            templateUrl: 'views/user.html',
+            controller: 'UserCtrl'
         })
         .when('/books', {
             templateUrl: 'views/books.html',
@@ -33,4 +41,6 @@ angular.module('physlibApp', [
         .otherwise({
             redirectTo: '/'
         });
-  });
+
+    $authProvider.loginRedirect = '/me';
+});

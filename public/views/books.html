@@ -17,11 +17,13 @@
       
       <div class="row marketing">
         <div class="col-md-10">
-          <h3>{{info.name}}</h2>
+          <h3>{{info.name}}</h3>
+          <h4>{{info.author}}</h4>
           <p>Status: {{info.signedOut}}</p>
         </div>
         <div class="col-md-2">
-          <button class="btn btn-primary">Sign out</button>
+          <button ng-if="!info.signedOut" ng-click="attemptSignout(ISBN)" class="btn btn-primary">Sign out</button>
+          <button ng-if="info.signedOut" ng-click="attemptRequest(ISBN)"  class="btn btn-success">Request</button>
         </div>
       </div>
       <hr>
